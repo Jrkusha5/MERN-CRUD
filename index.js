@@ -3,7 +3,7 @@ import express  from 'express'
 import {PORT ,mongoDBURL} from './config.js'
 import mongoose from 'mongoose';
 
-import bookRoute from './routes/bookRoute.js'
+import booksRoute from './routes/booksRoute.js'
 const app =express();
 
 //middleware for parsing request body
@@ -14,7 +14,7 @@ app.get('/',(req,res)=>{
     return res.status(234).send('welcome to Mern crud')
 });
 
-app.use('/books', bookRoute)
+app.use('/books', booksRoute)
 
 
 mongoose.connect(mongoDBURL).then(()=>{
